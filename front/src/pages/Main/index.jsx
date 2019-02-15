@@ -8,8 +8,8 @@ import { questions } from "../../mock";
 import { news } from "./assets/news";
 
 const Main = () => (
-  <div style={{ display: "flex", flex: 1 }}>
-    <div style={{ flex: 1, paddingRight: 24 }}>
+  <div style={{ display: "flex" }}>
+    <div style={{ width: "50%", paddingRight: 24 }}>
       <Box title="Publicações">
         {news.map((item, index) => (
           <Publication
@@ -21,7 +21,7 @@ const Main = () => (
         ))}
       </Box>
     </div>
-    <div style={{ flex: 1, paddingRight: 24 }}>
+    <div style={{ width: "50%", paddingRight: 24 }}>
       <Box title="Perguntas e Respostas">
         {questions.map((item, i) => (
           <Questions key={i} question={item.question} answer={item.answer} />
