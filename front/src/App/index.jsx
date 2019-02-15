@@ -8,6 +8,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import HomeIcon from '@material-ui/icons/Home';
 import MenuIcon from '@material-ui/icons/Menu';
 
 import Main from '../pages/Main';
@@ -84,9 +85,8 @@ const styles = theme => ({
 });
 
 class MiniDrawer extends React.Component {
-
   state = {
-    open: false
+    open: false,
   };
 
   handleDrawerOpen = () => {
@@ -127,7 +127,10 @@ class MiniDrawer extends React.Component {
               </Toolbar>
             </AppBar>
 
-            <DrawerMenu open={this.state.open} handleDrawerClose={this.handleDrawerClose}/>
+            <DrawerMenu
+              open={this.state.open}
+              handleDrawerClose={this.handleDrawerClose}
+            />
 
             <main className={classes.content}>
               <div>

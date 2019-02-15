@@ -18,12 +18,11 @@ const styles = theme => ({
   },
   paper: {
     marginBottom: 8,
-    border: 'solid 1px rgba(0, 0, 0, 0.1)',
   },
 });
 
 const Opportunities = ({ classes }) => (
-  <Paper elevation={0} className={classes.paper}>
+  <Paper elevation={1} className={classes.paper}>
     <ListItem alignItems="flex-start">
       <ListItemAvatar>
         <Avatar
