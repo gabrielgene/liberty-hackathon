@@ -1,6 +1,8 @@
 import React from "react";
 import { withStyles, Fab } from "@material-ui/core";
 
+import InfoIcon from "@material-ui/icons/Info";
+
 const styles = theme => ({
   fab: {
     margin: 0,
@@ -9,6 +11,9 @@ const styles = theme => ({
     bottom: 20,
     left: "auto",
     position: "fixed"
+  },
+  icon: {
+    marginRight: theme.spacing.unit
   }
 });
 
@@ -21,6 +26,7 @@ const ContactButton = ({ classes, onPress }) => (
     className={classes.fab}
     onClick={() => onPress()}
   >
+    <InfoIcon className={classes.icon} />
     Entre em contato
   </Fab>
 );

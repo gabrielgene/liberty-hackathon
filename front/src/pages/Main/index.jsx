@@ -9,16 +9,16 @@ import { questions } from "../../mock";
 const Main = () => (
   <div style={{ display: "flex", flex: 1 }}>
     <div style={{ flex: 1, paddingRight: 24 }}>
-      <Box title="Perguntas e Respostas">
-        {questions.map((item, i) => (
-          <Questions key={i} question={item.question} answer={item.answer} />
+      <Box title="Publicações">
+        {[...Array(20).keys()].map(i => (
+          <Publication key={i} />
         ))}
       </Box>
     </div>
     <div style={{ flex: 1, paddingRight: 24 }}>
-      <Box title="Publicações">
-        {[...Array(20).keys()].map(i => (
-          <Publication key={i} />
+      <Box title="Perguntas e Respostas">
+        {questions.map((item, i) => (
+          <Questions key={i} question={item.question} answer={item.answer} />
         ))}
       </Box>
     </div>
