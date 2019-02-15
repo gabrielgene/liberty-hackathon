@@ -1,9 +1,14 @@
 import React from 'react';
+import Typography from '@material-ui/core/Typography';
 
 const Box = ({ children, title }) => (
   <div>
-    <h1>{title}</h1>
-    <div>{children}</div>
+    <Typography style={{ marginBottom: 16 }} variant="h6" gutterBottom>
+      {title}
+    </Typography>
+    <div style={{ overflow: 'scroll', maxHeight: '83vh', paddingRight: 16 }}>
+      {children}
+    </div>
   </div>
 );
 

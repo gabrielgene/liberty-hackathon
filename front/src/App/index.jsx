@@ -10,14 +10,14 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
+import HomeIcon from '@material-ui/icons/Home';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import DashboardIcon from '@material-ui/icons/Dashboard';
 
 import Main from '../pages/Main';
 import Crm from '../pages/Crm';
@@ -162,31 +162,20 @@ class MiniDrawer extends React.Component {
                 <Link to="/">
                   <ListItem className={classes.listItem} button>
                     <ListItemIcon>
-                      <InboxIcon />
+                      <HomeIcon />
                     </ListItemIcon>
-                    <ListItemText primary="main" />
+                    <ListItemText primary="Inicio" />
                   </ListItem>
                 </Link>
 
                 <Link to="/about">
                   <ListItem className={classes.listItem} button>
                     <ListItemIcon>
-                      <MailIcon />
+                      <DashboardIcon />
                     </ListItemIcon>
-                    <ListItemText primary="about" />
+                    <ListItemText primary="Gestão de Clientes" />
                   </ListItem>
                 </Link>
-              </List>
-              <Divider />
-              <List>
-                {['Trash'].map((text, index) => (
-                  <ListItem className={classes.listItem} button key={text}>
-                    <ListItemIcon>
-                      {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                    </ListItemIcon>
-                    <ListItemText primary={text} />
-                  </ListItem>
-                ))}
               </List>
             </Drawer>
             <main className={classes.content}>
