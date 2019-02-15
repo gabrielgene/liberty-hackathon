@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const config = require('./config');
+const cors = require('cors');
 
 mongoose.Promise = global.Promise;
 
@@ -22,6 +23,7 @@ mongoose.set('debug', true);
 
 // create express app
 const app = express();
+app.use(cors());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
