@@ -1,9 +1,11 @@
-import React from "react";
+import React from 'react';
+import Opportunities from '../../components/Opportunities';
+import Publication from '../../components/Publication';
 import Box from "../../components/Box";
 import Questions from "../../components/Questions";
-import Publication from "../../components/Publication";
 
 import { questions } from "../../mock";
+import { news } from './assets/news';
 
 const Main = () => (
   <div style={{ display: "flex" }}>
@@ -16,8 +18,8 @@ const Main = () => (
     </div>
     <div style={{ width: "50%", paddingRight: 24 }}>
       <Box title="Publicações">
-        {[...Array(20).keys()].map(i => (
-          <Publication key={i} />
+        {news.map((item, index) => (
+          <Publication key={index} title={item.title} image={item.image} text={item.text} />
         ))}
       </Box>
     </div>
