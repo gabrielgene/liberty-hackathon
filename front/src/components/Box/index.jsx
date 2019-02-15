@@ -6,7 +6,7 @@ const Box = ({ children, title }) => (
     <Typography style={{ marginBottom: 16 }} variant="h6" gutterBottom>
       {title}
     </Typography>
-    <div style={{ overflow: 'scroll', maxHeight: '83vh', paddingRight: 16 }}>
+    <div style={{ overflow: 'auto', maxHeight: '83vh', paddingRight: 16 }}>
       {children}
     </div>
   </div>
