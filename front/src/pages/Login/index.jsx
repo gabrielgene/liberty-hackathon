@@ -55,8 +55,11 @@ const { classes } = this.props;
                 Faça seu login para continuar
               </Typography>
             </div>
-            <Card raised style={{
+            <Card  style={{
               position: 'absolute',
+              border:'solid',
+              borderWidth:1,
+              borderColor: '#f0f0f0',
               top: 26,
               right: 308,
               width: 500,
