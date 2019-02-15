@@ -5,7 +5,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import { NavLink } from "react-router-dom";
 import Tooltip from '@material-ui/core/Tooltip';
 
-const ListItemMenu = ({to, icon, text, open}) => {
+const ListItemMenu = ({to, icon, text}) => {
   return (
     <NavLink to={to} style={{textDecoration:'none'}}>
       <Tooltip title={text} placement="right" >

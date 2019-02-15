@@ -103,13 +103,8 @@ class DrawerMenu extends React.Component {
         </div>
 
         <List>
-          <ListItemMenu to="/" icon={<HomeIcon />} text="Main" open={open} />
-          <ListItemMenu
-            to="/about"
-            icon={<DashboardIcon />}
-            text="About"
-            open={open}
-          />
+          <ListItemMenu to="/" icon={<HomeIcon />} text="Main" />
+          <ListItemMenu to="/crm" icon={<DashboardIcon />} text="About" />
         </List>
       </Drawer>
     );
