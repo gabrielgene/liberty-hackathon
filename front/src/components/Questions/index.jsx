@@ -1,27 +1,28 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+import React from "react";
+import { withStyles } from "@material-ui/core/styles";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import Avatar from "@material-ui/core/Avatar";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
 
 const styles = theme => ({
   root: {
-    width: '100%',
+    width: "100%",
     maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: theme.palette.background.paper
   },
   inline: {
-    display: 'inline',
+    fontSize: 12,
+    display: "inline"
   },
   paper: {
-    marginBottom: 8,
-  },
+    marginBottom: 8
+  }
 });
 
-const Opportunities = ({ classes }) => (
+const Opportunities = ({ classes, question, answer }) => (
   <Paper elevation={1} className={classes.paper}>
     <ListItem alignItems="flex-start">
       <ListItemAvatar>
@@ -31,7 +32,7 @@ const Opportunities = ({ classes }) => (
         />
       </ListItemAvatar>
       <ListItemText
-        primary="Brunch this weekend?"
+        primary={question}
         secondary={
           <React.Fragment>
             <Typography
@@ -40,8 +41,8 @@ const Opportunities = ({ classes }) => (
               color="textPrimary"
             >
               Ali Connors
-            </Typography>
-            {" — I'll be in your neighborhood doing errands this…"}
+            </Typography>{" "}
+            {answer}
           </React.Fragment>
         }
       />

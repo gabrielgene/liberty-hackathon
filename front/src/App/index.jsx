@@ -5,7 +5,9 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import Root from '../components/Root';
 import Main from '../pages/Main';
 import Crm from '../pages/Crm';
+import LandingPage from '../pages/Landing';
 import defaultTheme from './theme';
+import './style.css';
 
 const LoginPage = () => <h1>Login</h1>;
 
@@ -28,7 +30,7 @@ const App = () => (
         <Route exact path="/" component={MainPage} />
         <Route exact path="/crm" component={CrmPage} />
         <Route path="/login" component={LoginPage} />
-        <Redirect to="/" />
+        <Route path="/landing" component={LandingPage} />
       </div>
     </Router>
   </MuiThemeProvider>
