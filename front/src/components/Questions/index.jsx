@@ -1,14 +1,14 @@
-import React from "react";
-import { withStyles } from "@material-ui/core/styles";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Avatar from "@material-ui/core/Avatar";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import TextField from "@material-ui/core/TextField";
+import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+import TextField from '@material-ui/core/TextField';
 
-import classnames from "classnames";
+import classnames from 'classnames';
 import {
   Card,
   CardContent,
@@ -16,69 +16,70 @@ import {
   IconButton,
   Collapse,
   Button,
-  List
-} from "@material-ui/core";
+  List,
+} from '@material-ui/core';
 
-import Comment from "../Comment";
+import Comment from '../Comment';
 
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import ChatIcon from "@material-ui/icons/Chat";
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ChatIcon from '@material-ui/icons/Chat';
 
 const styles = theme => ({
   root: {
-    width: "100%",
+    width: '100%',
     maxWidth: 360,
-    backgroundColor: theme.palette.background.paper
+    backgroundColor: theme.palette.background.paper,
   },
   inline: {
     fontSize: 12,
-    display: "inline"
+    display: 'inline',
   },
   paper: {
-    marginBottom: 8
+    marginBottom: 8,
   },
   media: {
     height: 0,
-    paddingTop: "56.25%" // 16:9
+    paddingTop: '56.25%', // 16:9
   },
   actions: {
-    display: "flex"
+    display: 'flex',
   },
   expand: {
-    transform: "rotate(0deg)",
-    marginLeft: "auto",
-    transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest
-    })
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
   },
   expandOpen: {
-    transform: "rotate(180deg)"
+    transform: 'rotate(180deg)',
   },
   button: {
     margin: theme.spacing.unit,
-    width: "20%"
+    width: '20%',
+    marginBottom: -8,
   },
   input: {
-    width: "80%"
+    width: '80%',
   },
   form: {
-    marginTop: 20,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
-  }
+    // marginTop: 20,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 class Opportunities extends React.Component {
   state = {
-    isExpanded: false
+    isExpanded: false,
   };
 
   handleExpandClick = () => {
     this.setState(prevState => ({
-      isExpanded: !prevState.isExpanded
+      isExpanded: !prevState.isExpanded,
     }));
   };
 
@@ -107,12 +108,13 @@ class Opportunities extends React.Component {
           <IconButton aria-label="Comentários" onClick={this.handleExpandClick}>
             <ChatIcon />
           </IconButton>
+          <Typography variant="caption">{likes}</Typography>
           <IconButton aria-label="Share">
             <ShareIcon />
           </IconButton>
           <IconButton
             className={classnames(classes.expand, {
-              [classes.expandOpen]: isExpanded
+              [classes.expandOpen]: isExpanded,
             })}
             onClick={this.handleExpandClick}
             aria-expanded={isExpanded}
@@ -134,9 +136,9 @@ class Opportunities extends React.Component {
             <form className={classes.form}>
               <TextField
                 className={classes.input}
-                label="Resposta"
+                label="Responder:"
                 margin="normal"
-                variant="outlined"
+                // variant="outlined"
               />
               <Button
                 color="primary"

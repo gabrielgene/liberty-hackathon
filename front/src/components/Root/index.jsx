@@ -131,7 +131,7 @@ class MiniDrawer extends React.Component {
               style={{ display: 'flex', marginLeft: 'auto', marginRight: 16 }}
             >
               <Button style={{ marginRight: 32 }}>Publicar</Button>
-              <Avatar>SS</Avatar>
+              <Avatar src="https://avatars3.githubusercontent.com/u/19671668?s=460&v=4" />
             </div>
           </Toolbar>
         </AppBar>

@@ -1,20 +1,20 @@
-import React from "react";
-import { withStyles, Fab } from "@material-ui/core";
+import React from 'react';
+import { withStyles, Fab } from '@material-ui/core';
 
-import InfoIcon from "@material-ui/icons/Info";
+import InfoIcon from '@material-ui/icons/InsertDriveFile';
 
 const styles = theme => ({
   fab: {
     margin: 0,
-    top: "auto",
+    top: 'auto',
     right: 20,
     bottom: 20,
-    left: "auto",
-    position: "fixed"
+    left: 'auto',
+    position: 'fixed',
   },
   icon: {
-    marginRight: theme.spacing.unit
-  }
+    marginRight: theme.spacing.unit,
+  },
 });
 
 const ContactButton = ({ classes, onPress }) => (
@@ -27,7 +27,7 @@ const ContactButton = ({ classes, onPress }) => (
     onClick={() => onPress()}
   >
     <InfoIcon className={classes.icon} />
-    Entre em contato
+    Encontre um corretor online
   </Fab>
 );
 
