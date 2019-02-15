@@ -1,18 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
-import Root from '../components/Root';
-import Main from '../pages/Main';
-import Crm from '../pages/Crm';
-import LandingPage from '../pages/Landing';
+import Form from '../pages/Form';
+
 import defaultTheme from './theme';
 import './style.css';
 
 const Login = () => <h1>Login</h1>;
 const Feed = () => <h1>Feed</h1>;
 const Document = () => <h1>Document</h1>;
-const Form = () => <h1>Form</h1>;
 const Requests = () => <h1>Requests</h1>;
 const Opportunities = () => <h1>Opportunities</h1>;
 const Contacts = () => <h1>Contacts</h1>;
