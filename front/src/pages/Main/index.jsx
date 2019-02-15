@@ -24,7 +24,13 @@ const Main = () => (
     <div style={{ width: "50%", paddingRight: 24 }}>
       <Box title="Perguntas e Respostas">
         {questions.map((item, i) => (
-          <Questions key={i} question={item.question} answer={item.answer} />
+          <Questions
+            key={i}
+            question={item.question}
+            answer={item.answer}
+            comments={item.comments}
+            likes={item.likes}
+          />
         ))}
       </Box>
     </div>
