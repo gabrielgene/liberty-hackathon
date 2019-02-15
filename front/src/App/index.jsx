@@ -1,27 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import classNames from 'classnames';
 import { withStyles, MuiThemeProvider } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
+
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
 import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import DashboardIcon from '@material-ui/icons/Dashboard';
 
 import Main from '../pages/Main';
 import Crm from '../pages/Crm';
 import defaultTheme from './theme';
+import DrawerMenu from '../components/DrawerMenu';
 
 const drawerWidth = 240;
 
@@ -103,9 +96,8 @@ class MiniDrawer extends React.Component {
   handleDrawerClose = () => {
     this.setState({ open: false });
   };
-
   render() {
-    const { classes, theme } = this.props;
+    const { classes } = this.props;
 
     return (
       <MuiThemeProvider theme={defaultTheme}>
@@ -134,50 +126,12 @@ class MiniDrawer extends React.Component {
                 </Typography>
               </Toolbar>
             </AppBar>
-            <Drawer
-              variant="permanent"
-              className={classNames(classes.drawer, {
-                [classes.drawerOpen]: this.state.open,
-                [classes.drawerClose]: !this.state.open,
-              })}
-              classes={{
-                paper: classNames({
-                  [classes.drawerOpen]: this.state.open,
-                  [classes.drawerClose]: !this.state.open,
-                }),
-              }}
-              open={this.state.open}
-            >
-              <div className={classes.toolbar}>
-                <IconButton onClick={this.handleDrawerClose}>
-                  {theme.direction === 'rtl' ? (
-                    <ChevronRightIcon />
-                  ) : (
-                    <ChevronLeftIcon />
-                  )}
-                </IconButton>
-              </div>
-              <Divider />
-              <List>
-                <Link to="/">
-                  <ListItem className={classes.listItem} button>
-                    <ListItemIcon>
-                      <HomeIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Inicio" />
-                  </ListItem>
-                </Link>
 
-                <Link to="/about">
-                  <ListItem className={classes.listItem} button>
-                    <ListItemIcon>
-                      <DashboardIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Gestão de Clientes" />
-                  </ListItem>
-                </Link>
-              </List>
-            </Drawer>
+            <DrawerMenu
+              open={this.state.open}
+              handleDrawerClose={this.handleDrawerClose}
+            />
+
             <main className={classes.content}>
               <div>
                 <Route exact path="/" component={Main} />
