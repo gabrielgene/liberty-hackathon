@@ -9,28 +9,25 @@ import LandingPage from '../pages/Landing';
 import defaultTheme from './theme';
 import './style.css';
 
-const LoginPage = () => <h1>Login</h1>;
-
-const MainPage = () => (
-  <Root>
-    <Main />
-  </Root>
-);
-
-const CrmPage = () => (
-  <Root>
-    <Crm />
-  </Root>
-);
+const Login = () => <h1>Login</h1>;
+const Feed = () => <h1>Feed</h1>;
+const Document = () => <h1>Document</h1>;
+const Form = () => <h1>Form</h1>;
+const Requests = () => <h1>Requests</h1>;
+const Opportunities = () => <h1>Opportunities</h1>;
+const Contacts = () => <h1>Contacts</h1>;
 
 const App = () => (
   <MuiThemeProvider theme={defaultTheme}>
     <Router>
       <div>
-        <Route exact path="/" component={MainPage} />
-        <Route exact path="/crm" component={CrmPage} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/landing" component={LandingPage} />
+        <Route exact path="/" component={Login} />
+        <Route path="/inicio" component={Feed} />
+        <Route path="/artigo/:id" component={Document} />
+        <Route path="/solicitar" component={Form} />
+        <Route path="/minhas-solicitacoes" component={Requests} />
+        <Route path="/oportunidades" component={Opportunities} />
+        <Route path="/contatos" component={Contacts} />
       </div>
     </Router>
   </MuiThemeProvider>

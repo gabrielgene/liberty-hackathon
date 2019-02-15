@@ -4,8 +4,8 @@ import Box from '../../components/Box';
 import Questions from '../../components/Questions';
 import ContactButton from '../../components/ContactButton';
 
-import { questions } from '../../mock';
 import { news } from './assets/news';
+import { questions } from '../../mock/index.js';
 
 const Main = () => (
   <div style={{ display: 'flex' }}>
