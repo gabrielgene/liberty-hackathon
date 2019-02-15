@@ -84,7 +84,7 @@ class Opportunities extends React.Component {
   };
 
   render() {
-    const { classes, question, likes, comments } = this.props;
+    const { classes, question, likes, comments, number, picture } = this.props;
     const { isExpanded } = this.state;
 
     return (
@@ -92,10 +92,7 @@ class Opportunities extends React.Component {
         <CardContent>
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
-              <Avatar
-                alt="Remy Sharp"
-                src="https://material-ui.com/static/images/avatar/1.jpg"
-              />
+              <Avatar alt="Remy Sharp" src={picture} />
             </ListItemAvatar>
             <ListItemText primary={question} />
           </ListItem>
@@ -108,7 +105,7 @@ class Opportunities extends React.Component {
           <IconButton aria-label="Comentários" onClick={this.handleExpandClick}>
             <ChatIcon />
           </IconButton>
-          <Typography variant="caption">{likes}</Typography>
+          <Typography variant="caption">{number}</Typography>
           <IconButton aria-label="Share">
             <ShareIcon />
           </IconButton>

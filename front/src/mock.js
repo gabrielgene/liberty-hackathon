@@ -1,0 +1,6 @@
+const x = [
+  {
+    foto: '',
+    pergunta: '',
+  },
+];
