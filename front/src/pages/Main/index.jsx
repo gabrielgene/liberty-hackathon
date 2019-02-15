@@ -3,6 +3,7 @@ import Box from '../../components/Box';
 import Opportunities from '../../components/Opportunities';
 import Questions from '../../components/Questions';
 import Publication from '../../components/Publication';
+import {news} from './assets/news';
 
 const Main = () => (
   <div style={{ display: 'flex' }}>
@@ -15,8 +16,8 @@ const Main = () => (
     </div>
     <div style={{ width: '40%', paddingRight: 24 }}>
       <Box title="Publicações">
-        {[...Array(20).keys()].map(i => (
-          <Publication key={i} />
+        {news.map((item, index) => (
+          <Publication key={index} title={item.title} image={item.image} text={item.text} />
         ))}
       </Box>
     </div>
