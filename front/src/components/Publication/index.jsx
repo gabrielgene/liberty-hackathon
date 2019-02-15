@@ -11,16 +11,20 @@ const styles = theme => ({
     display: 'flex',
     border: 'solid 1px rgba(0, 0, 0, 0.1)',
     marginBottom: 8,
+    height: 200,
+    overflow: 'hidden'
   },
   details: {
     display: 'flex',
     flexDirection: 'column',
+    width: 675,
   },
   content: {
     flex: '1 0 auto',
   },
   cover: {
-    width: 400,
+    width: 300,
+    height: 200,
   },
   controls: {
     display: 'flex',
@@ -35,24 +39,22 @@ const styles = theme => ({
 });
 
 function MediaControlCard(props) {
-  const { classes } = props;
-
+  const { classes, title, text, image } = props;
   return (
     <Paper elevation={0} className={classes.card}>
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            {title}
           </Typography>
-          <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          <Typography component="p" style={{overflow:'hidden'}}>
+            {text}
           </Typography>
         </CardContent>
       </div>
       <CardMedia
         className={classes.cover}
-        image="https://cdn-images-1.medium.com/max/2000/1*uWX8gpf3EJL1LbsSAbF4QQ.jpeg"
+        image={image}
         title="Live from space album cover"
       />
     </Paper>
