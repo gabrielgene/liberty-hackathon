@@ -6,10 +6,9 @@ import Root from '../components/Root';
 import Main from '../pages/Main';
 import Crm from '../pages/Crm';
 import LandingPage from '../pages/Landing';
+import Login from '../pages/Login';
 import defaultTheme from './theme';
 import './style.css';
-
-const LoginPage = () => <h1>Login</h1>;
 
 const MainPage = () => (
   <Root>
@@ -29,7 +28,7 @@ const App = () => (
       <div>
         <Route exact path="/" component={MainPage} />
         <Route exact path="/crm" component={CrmPage} />
-        <Route path="/login" component={LoginPage} />
+        <Route path="/login" component={Login} />
         <Route path="/landing" component={LandingPage} />
       </div>
     </Router>
