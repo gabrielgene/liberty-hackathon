@@ -1,14 +1,14 @@
-import React from "react";
-import PropsTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
-import Root from "../../components/Root";
-import Opportunities from "../../components/Opportunities";
-import Box from "../../components/Box";
+import React from 'react';
+import PropsTypes from 'prop-types';
+import { withStyles } from '@material-ui/core';
+import Root from '../../components/Root';
+import Opportunities from '../../components/Opportunities';
+import Box from '../../components/Box';
 
 class Requests extends React.Component {
   state = {
     isLoading: true,
-    solicitations: []
+    solicitations: [],
   };
 
   render() {
@@ -17,7 +17,7 @@ class Requests extends React.Component {
 
     return (
       <Root>
-        <div style={{ width: "70%" }}>
+        <div style={{ width: '70%' }}>
           <Box title="Solicitacoes">
             {[...Array(20).keys()].map(i => (
               <Opportunities key={i} />
@@ -32,7 +32,7 @@ class Requests extends React.Component {
 const styles = theme => ({});
 
 Request.PropsTypes = {
-  classes: PropsTypes.object.isRequired
+  classes: PropsTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Requests);

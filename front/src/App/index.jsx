@@ -10,12 +10,11 @@ import './style.css';
 
 import Feed from '../pages/Feed';
 import Opportunities from '../pages/Opportunities';
-import Contacts from '../pages/Clients';
 import Document from '../pages/Document';
-import Requests from '../pages/Requests';
 
 const Opp = () => <Opportunities title="Oportunidades" />;
 const Clients = () => <Opportunities title="Meus Clientes" />;
+const Requests = () => <Opportunities title="Minhas Solicitações" />;
 
 const App = () => (
   <MuiThemeProvider theme={defaultTheme}>
