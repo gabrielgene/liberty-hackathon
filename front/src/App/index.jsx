@@ -13,7 +13,7 @@ import Opportunities from '../pages/Opportunities';
 import Document from '../pages/Document';
 
 const Opp = () => <Opportunities title="Oportunidades" />;
-const Clients = () => <Opportunities title="Meus Clientes" />;
+const Clients = () => <Opportunities title="Meus Clientes" bided />;
 const Requests = () => <Opportunities title="Minhas Solicitações" />;
 
 const App = () => (
@@ -22,6 +22,7 @@ const App = () => (
       <div>
         <Route exact path="/" component={Login} />
         <Route path="/inicio" component={Feed} />
+        <Route path="/aprenda" component={Feed} />
         <Route path="/artigo/:id" component={Document} />
         <Route path="/solicitar" component={Form} />
         <Route path="/minhas-solicitacoes" component={Requests} />

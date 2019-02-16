@@ -4,6 +4,7 @@ const DocumentSchema = mongoose.Schema({
   title: String,
   content: String,
   img: String,
+  marketing: Boolean,
   trunc: String,
 });
 

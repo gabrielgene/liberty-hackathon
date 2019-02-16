@@ -4,6 +4,7 @@ import LeadService from "../../services/Lead";
 import { withStyles } from "@material-ui/core";
 import Root from "../../components/Root";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import { Fade } from "@material-ui/core";
 import PropTypes from "prop-types";
 import Paper from "@material-ui/core/Paper";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -43,7 +44,6 @@ class Feed extends React.Component {
     LeadService.getLeads()
       .then(data => data.json())
       .then(leads => {
-        console.log(leads);
         this.setState({
           isLoading: false,
           leads: leads
@@ -57,22 +57,38 @@ class Feed extends React.Component {
   handleError = err => {};
 
   render() {
-    const { classes, title } = this.props;
+    const { classes, title, bided } = this.props;
     const { isLoading, leads } = this.state;
 
     return (
       <Root>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Box width={800} title={title}>
-            {console.log(leads)}
-            <div>
-              {leads
-                .filter(l => !l.bided)
-                .map(l => (
-                  <Opportunities key={l._id} {...l} place={l.location} />
-                ))}
-            </div>
-          </Box>
+          {isLoading ? (
+            <Fade in={isLoading}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  height: "70vh",
+                  justifyContent: "center"
+                }}
+              >
+                <Typography variant="display1">{title}</Typography>
+                <CircularProgress color="primary" style={{ marginTop: 10 }} />
+              </div>
+            </Fade>
+          ) : (
+            <Box width={800} title={title}>
+              <div>
+                {leads
+                  .filter(l => l.bided === !!bided)
+                  .map(l => (
+                    <Opportunities key={l._id} {...l} place={l.location} />
+                  ))}
+              </div>
+            </Box>
+          )}
         </div>
       </Root>
     );

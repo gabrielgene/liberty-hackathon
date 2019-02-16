@@ -1,16 +1,16 @@
-import React from "react";
-import PropsTypes from "prop-types";
-import DocumentService from "../../services/Document";
-import { withStyles, Typography, Fade } from "@material-ui/core";
-import Root from "../../components/Root";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import React from 'react';
+import PropsTypes from 'prop-types';
+import DocumentService from '../../services/Document';
+import { withStyles, Typography, Fade } from '@material-ui/core';
+import Root from '../../components/Root';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
-import DocumentCard from "../../components/DocumentCard";
+import DocumentCard from '../../components/DocumentCard';
 
 class Feed extends React.Component {
   state = {
     isLoading: true,
-    documents: []
+    documents: [],
   };
 
   componentDidMount() {
@@ -19,13 +19,13 @@ class Feed extends React.Component {
       .then(documents =>
         this.setState({
           isLoading: false,
-          documents: documents
-        })
+          documents: documents,
+        }),
       )
       .catch(err =>
         this.setState({ isLoading: false, documents: [] }, () =>
-          this.handleError(err)
-        )
+          this.handleError(err),
+        ),
       );
   }
 
@@ -39,20 +39,20 @@ class Feed extends React.Component {
       <Root>
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center"
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
           }}
         >
           {isLoading ? (
             <Fade in={isLoading}>
               <div
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  height: "70vh",
-                  justifyContent: "center"
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  height: '70vh',
+                  justifyContent: 'center',
                 }}
               >
                 <Typography variant="display1">Carregando o feed</Typography>
@@ -73,7 +73,7 @@ class Feed extends React.Component {
 const styles = theme => ({});
 
 Feed.PropsTypes = {
-  classes: PropsTypes.object.isRequired
+  classes: PropsTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Feed);

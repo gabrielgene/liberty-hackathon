@@ -10,6 +10,9 @@ import PhoneIcon from "@material-ui/icons/Phone";
 import LocIcon from "@material-ui/icons/LocationOn";
 
 import { USER_TYPE, TYPE_CLIENTE } from "../../util";
+import { red } from "@material-ui/core/colors";
+
+import LeadService from "../../services/Lead";
 
 const styles = theme => ({
   root: {
@@ -33,9 +36,39 @@ const styles = theme => ({
 });
 
 const Opportunities = props => {
-  const { classes, name, tel, service, cpf, place, bided } = props;
+  const { classes, name, tel, service, cpf, place, bided, _id } = props;
 
   const userType = localStorage.getItem(USER_TYPE);
+
+  const handleCancelContact = () => {
+    const lead = {
+      name: name,
+      tel: tel,
+      service: service,
+      cpf: cpf,
+      location: place,
+      bided: false
+    };
+
+    LeadService.updateLead(lead, _id).then(data => {
+      props.history.push("/oportunidades");
+    });
+  };
+
+  const handleContact = () => {
+    const lead = {
+      name: name,
+      tel: tel,
+      service: service,
+      cpf: cpf,
+      location: place,
+      bided: true
+    };
+
+    LeadService.updateLead(lead, _id).then(() =>
+      props.history.push("/contatos")
+    );
+  };
 
   return (
     <Paper elevation={0} className={classes.paper}>
@@ -106,28 +139,50 @@ const Opportunities = props => {
             flex: 1,
             display: "flex",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
+            padding: 10
           }}
         >
           {userType === TYPE_CLIENTE ? (
             bided ? (
               <Button variant="outlined" color="secondary" disabled>
-                Em negociação
+                Negociando
               </Button>
             ) : (
               <Button variant="outlined" color="primary" disabled>
                 Pendente
               </Button>
             )
+          ) : bided ? (
+            <div
+              style={{
+                flex: 1,
+                display: "flex",
+                flexDirection: "column"
+              }}
+            >
+              <Button variant="outlined" color="secondary" disabled>
+                Negociando
+              </Button>
+              <Button
+                style={{
+                  marginTop: 10,
+                  color: "#f44336",
+                  borderColor: "#f44336"
+                }}
+                variant="outlined"
+                onClick={() => handleCancelContact()}
+              >
+                Cancelar
+              </Button>
+            </div>
           ) : (
             <Button
               variant="contained"
               color="primary"
-              onClick={() => {
-                props.history.push("/contatos");
-              }}
+              onClick={() => handleContact()}
             >
-              Entrar em contato
+              Contactar
             </Button>
           )}
         </div>
