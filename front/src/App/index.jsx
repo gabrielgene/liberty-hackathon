@@ -32,7 +32,6 @@ const App = () => (
         <Route path="/minhas-solicitacoes" component={Requests} />
         <Route path="/oportunidades" component={Opp} />
         <Route path="/contatos" component={Clients} />
-        <Route path="/landing" component={Landing} />
       </div>
     </Router>
   </MuiThemeProvider>
