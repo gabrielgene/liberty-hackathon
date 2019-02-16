@@ -133,7 +133,11 @@ class MiniDrawer extends React.Component {
             <div
               style={{ display: "flex", marginLeft: "auto", marginRight: 16 }}
             >
-              <Avatar src="https://avatars3.githubusercontent.com/u/19671668?s=460&v=4" />
+              {userType === TYPE_CLIENTE ? (
+                <Avatar>C</Avatar>
+              ) : (
+                <Avatar src="https://avatars3.githubusercontent.com/u/19671668?s=460&v=4" />
+              )}
             </div>
           </Toolbar>
         </AppBar>
