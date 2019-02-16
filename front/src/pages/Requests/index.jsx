@@ -5,20 +5,20 @@ import Root from "../../components/Root";
 import Opportunities from "../../components/Opportunities";
 import Box from "../../components/Box";
 
-class Contacts extends React.Component {
+class Requests extends React.Component {
   state = {
     isLoading: true,
-    contacts: []
+    solicitations: []
   };
 
   render() {
     const { classes } = this.props;
-    const { isLoading, contacts } = this.state;
+    const { isLoading, solicitations } = this.state;
 
     return (
       <Root>
         <div style={{ width: "70%" }}>
-          <Box title="Contatos">
+          <Box title="Solicitacoes">
             {[...Array(20).keys()].map(i => (
               <Opportunities key={i} />
             ))}
@@ -31,8 +31,8 @@ class Contacts extends React.Component {
 
 const styles = theme => ({});
 
-Contacts.PropsTypes = {
+Request.PropsTypes = {
   classes: PropsTypes.object.isRequired
 };
 
-export default withStyles(styles)(Contacts);
+export default withStyles(styles)(Requests);
