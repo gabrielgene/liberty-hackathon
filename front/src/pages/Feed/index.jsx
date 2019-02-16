@@ -32,7 +32,7 @@ class Feed extends React.Component {
   handleError = err => {};
 
   render() {
-    const { classes } = this.props;
+    const { classes, load, learn } = this.props;
     const { isLoading, documents } = this.state;
 
     return (
@@ -55,14 +55,16 @@ class Feed extends React.Component {
                   justifyContent: 'center',
                 }}
               >
-                <Typography variant="display1">Carregando o feed</Typography>
+                <Typography variant="display1">{load}</Typography>
                 <CircularProgress color="primary" style={{ marginTop: 10 }} />
               </div>
             </Fade>
           ) : (
-            documents.map((document, i) => (
-              <DocumentCard key={i} index={i} {...document} />
-            ))
+            documents
+              .filter(d => d.marketing === !!learn)
+              .map((document, i) => (
+                <DocumentCard key={i} index={i} {...document} />
+              ))
           )}
         </div>
       </Root>

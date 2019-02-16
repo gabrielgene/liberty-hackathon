@@ -11,18 +11,22 @@ import './style.css';
 import Feed from '../pages/Feed';
 import Opportunities from '../pages/Opportunities';
 import Document from '../pages/Document';
+import Landing from '../pages/Landing';
 
 const Opp = () => <Opportunities title="Oportunidades" />;
 const Clients = () => <Opportunities title="Meus Clientes" bided />;
 const Requests = () => <Opportunities title="Minhas Solicitações" />;
+const Main = () => <Feed load="Carregando Feed" />;
+const Learn = () => <Feed load="Carregando material de estudos" learn />;
 
 const App = () => (
   <MuiThemeProvider theme={defaultTheme}>
     <Router>
       <div>
         <Route exact path="/" component={Login} />
-        <Route path="/inicio" component={Feed} />
-        <Route path="/aprenda" component={Feed} />
+        <Route path="/sobre" component={Landing} />
+        <Route path="/inicio" component={Main} />
+        <Route path="/aprenda" component={Learn} />
         <Route path="/artigo/:id" component={Document} />
         <Route path="/solicitar" component={Form} />
         <Route path="/minhas-solicitacoes" component={Requests} />

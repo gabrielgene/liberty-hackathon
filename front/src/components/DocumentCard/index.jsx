@@ -1,37 +1,38 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 import {
   withStyles,
   CardContent,
   Typography,
   CardActions,
   IconButton,
-  Paper
-} from "@material-ui/core";
-import Grow from "@material-ui/core/Grow";
+  Paper,
+} from '@material-ui/core';
+import Grow from '@material-ui/core/Grow';
 
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
-import ChatIcon from "@material-ui/icons/Chat";
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
+import ChatIcon from '@material-ui/icons/Chat';
 
-const DocumentCard = ({ title, _id, classes, trunc, index, history }) => (
+const DocumentCard = ({ title, _id, classes, trunc, index, history, img }) => (
   <Grow in={true}>
     <Paper
       elevation={2}
       style={{
         marginBottom: 24,
-        border: "1px solid rgba(0, 0, 0, 0.2)",
-        width: "70%",
-        cursor: "pointer"
+        border: '1px solid rgba(0, 0, 0, 0.2)',
+        width: '70%',
+        cursor: 'pointer',
       }}
       onClick={() => history.push(`/artigo/${_id}`)}
     >
       <div className={classes.details}>
+        <img src={img} style={{ height: '100%', width: '100%' }} />
         <CardContent className={classes.content}>
           <Typography gutterBottom variant="h5" component="h2">
             {title}
           </Typography>
-          <Typography component="p" style={{ overflow: "hidden" }}>
+          <Typography component="p" style={{ overflow: 'hidden' }}>
             {trunc}
           </Typography>
         </CardContent>
