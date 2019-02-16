@@ -62,9 +62,13 @@ class SignIn extends React.Component {
   onClick = () => {
     console.log('==>', this.state);
     const { email, password } = this.state;
-    if((email === 'cliente' && password === '123') || (email === 'corretor' && password === '123')){
-      alert("success")
+    if(email === 'corretor' && password === '123'){
+      this.props.history.push('/inicio', { type: email });
     }
+    else if(email === 'cliente' && password === '123'){
+      this.props.history.push('/minhas-solicitacoes', { type: email });
+    }
+    else alert("Usuário não encontrado");
   };
 
   render() {
