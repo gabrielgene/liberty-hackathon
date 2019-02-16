@@ -60,7 +60,6 @@ class SignIn extends React.Component {
   handleChange = e => this.setState({ [e.target.name]: e.target.value})
 
   onClick = () => {
-    console.log('==>', this.state);
     const { email, password } = this.state;
     if(email === 'corretor' && password === '123'){
       this.props.history.push('/inicio', { type: email });
