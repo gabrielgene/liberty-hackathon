@@ -5,22 +5,37 @@ import Root from '../../components/Root';
 import Opportunities from '../../components/Opportunities';
 import Box from '../../components/Box';
 
+import RequestItem from '../../components/RequestItem';
+
+import LeadServices from '../../services/Lead';
+
 class Requests extends React.Component {
   state = {
     isLoading: true,
-    solicitations: [],
+    requests: [],
   };
+
+  componentDidMount() {
+    LeadServices.getLeads()
+      .then(data => data.json())
+      .then(leads =>
+        this.setState({
+          isLoading: false,
+          requests: leads.filter(el => el.name.substring(0, 1) === 'R'),
+        }),
+      );
+  }
 
   render() {
     const { classes } = this.props;
-    const { isLoading, solicitations } = this.state;
+    const { isLoading, requests } = this.state;
 
     return (
       <Root>
         <div style={{ width: '70%' }}>
-          <Box title="Solicitacoes">
-            {[...Array(20).keys()].map(i => (
-              <Opportunities key={i} />
+          <Box title="Minhas Solicitações">
+            {requests.map(item => (
+              <RequestItem key={item._id} {...item} />
             ))}
           </Box>
         </div>
