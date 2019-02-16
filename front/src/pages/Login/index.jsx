@@ -1,19 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 import logo from '../../assets/logo.png';
+import bg from '../../assets/bg.jpg';
 
 
 const styles = theme => ({
+  holder:{
+    backgroundImage: `url(${bg})`,
+    height: '100vh',
+    paddingTop: '20vh',
+    width: '100vw',
+  },
   main: {
     width: 'auto',
     display: 'block', // Fix IE 11 issue.
@@ -29,7 +33,6 @@ const styles = theme => ({
     width: 150
   },
   paper: {
-    marginTop: '20vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -67,33 +70,35 @@ class SignIn extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <main className={classes.main}>
-        <CssBaseline />
-        <Paper className={classes.paper}>
-            <img className={classes.imgLogin} src={logo} alt="" />
-          <Typography component="h1" variant="h5">
-            StartSeg
-          </Typography>
-          <form className={classes.form}>
-            <FormControl margin="normal" required fullWidth>
-              <InputLabel htmlFor="email">Username</InputLabel>
-              <Input id="email" name="email" onChange={this.handleChange} />
-            </FormControl>
-            <FormControl margin="normal" required fullWidth>
-              <InputLabel htmlFor="password">Senha</InputLabel>
-              <Input name="password" type="password" id="password" autoComplete="current-password" onChange={this.handleChange}  />
-            </FormControl>
-            <Button
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-              onClick={this.onClick}
-            >
-              Entrar
-            </Button>
-          </form>
-        </Paper>
+      <main className={classes.holder}>
+        <div className={classes.main}>
+          <CssBaseline />
+            <Paper className={classes.paper}>
+              <img className={classes.imgLogin} src={logo} alt="" />
+              <Typography component="h1" variant="h5">
+                StartSeg
+              </Typography>
+              <form className={classes.form}>
+                <FormControl margin="normal" required fullWidth>
+                  <InputLabel htmlFor="email">Username</InputLabel>
+                  <Input id="email" name="email" onChange={this.handleChange} />
+                </FormControl>
+                <FormControl margin="normal" required fullWidth>
+                  <InputLabel htmlFor="password">Senha</InputLabel>
+                  <Input name="password" type="password" id="password" autoComplete="current-password" onChange={this.handleChange}  />
+                </FormControl>
+                <Button
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  className={classes.submit}
+                  onClick={this.onClick}
+                >
+                  Entrar
+                </Button>
+              </form>
+          </Paper>
+        </div>
       </main>
     )
   }
