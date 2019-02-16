@@ -75,7 +75,7 @@ const Form = props => {
   const [location, setLocation] = React.useState('');
 
   const handleSubmit = () => {
-    fetch('');
+    console.log(name, tel, service, cpf, location);
   };
 
   return (
@@ -162,26 +162,39 @@ const Form = props => {
               fullWidth
             />
           </div>
-          <TextField
-            id="outlined-name"
-            label="Localização"
-            className={classes.textField}
-            value={location}
-            onChange={e => setLocation(e.target.value)}
-            margin="normal"
-            variant="outlined"
-            fullWidth
-          />
-          <Button
-            variant="contained"
-            color="primary"
-            fullWidth
-            size="large"
-            className={classes.button}
-            onClick={() => console.log('Rly')}
+          <div
+            style={{
+              display: 'flex',
+              marginTop: 8,
+              marginBottom: 8,
+            }}
           >
-            Solicitar
-          </Button>
+            <TextField
+              id="outlined-name"
+              label="Localização"
+              className={classes.textField}
+              value={location}
+              onChange={e => setLocation(e.target.value)}
+              variant="outlined"
+              fullWidth
+            />
+          </div>
+          <div
+            style={{
+              display: 'flex',
+            }}
+          >
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              size="large"
+              className={classes.button}
+              onClick={handleSubmit}
+            >
+              Solicitar
+            </Button>
+          </div>
         </Paper>
       </div>
     </div>
