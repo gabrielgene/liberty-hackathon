@@ -13,8 +13,6 @@ import Avatar from '@material-ui/core/Avatar';
 import HomeIcon from '@material-ui/icons/Home';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import Main from '../../pages/Main';
-import Crm from '../../pages/Crm';
 import DrawerMenu from '../../components/DrawerMenu';
 
 const drawerWidth = 240;
@@ -130,7 +128,6 @@ class MiniDrawer extends React.Component {
             <div
               style={{ display: 'flex', marginLeft: 'auto', marginRight: 16 }}
             >
-              <Button style={{ marginRight: 32 }}>Publicar</Button>
               <Avatar src="https://avatars3.githubusercontent.com/u/19671668?s=460&v=4" />
             </div>
           </Toolbar>

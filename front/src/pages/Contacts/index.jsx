@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles';
 import ListItem from '../../components/ListItem';
 import List from '@material-ui/core/List';
+import Root from '../../components/Root';
 
 const styles = theme => ({
   root: {
@@ -14,11 +15,13 @@ const styles = theme => ({
 class Contacts extends Component {
   render() {
     return (
-      // <Root>
+      <Root>
         <div>
-          <List />
+          <List>
+
+          </List>
         </div>
-      // </Root>
+      </Root>
     )
   }
 }
