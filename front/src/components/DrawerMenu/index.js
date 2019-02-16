@@ -9,11 +9,12 @@ import HomeIcon from '@material-ui/icons/Home';
 import ExitIcon from '@material-ui/icons/ExitToApp';
 import DashboardIcon from '@material-ui/icons/Work';
 import LearnIcon from '@material-ui/icons/LocalLibrary';
+import InfoIcon from '@material-ui/icons/Info';
 import Divider from '@material-ui/core/Divider';
 import classNames from 'classnames';
 
 import SolicitacoesIcon from '@material-ui/icons/Assignment';
-import InfoIcon from '@material-ui/icons/InsertDriveFile';
+import InsertIcon from '@material-ui/icons/InsertDriveFile';
 
 import ListItemMenu from './Listitem';
 
@@ -139,11 +140,12 @@ class DrawerMenu extends React.Component {
               />
               <ListItemMenu
                 to="/solicitar"
-                icon={<InfoIcon />}
+                icon={<InsertIcon />}
                 text="Solicitar"
               />
             </React.Fragment>
           )}
+          <ListItemMenu to="/sobre" icon={<InfoIcon />} text="Sobre" />
         </List>
         <Divider />
         <List>
