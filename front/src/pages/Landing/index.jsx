@@ -11,13 +11,6 @@ const Landing = () => (
       top: 0,
       left: 0
     }}> </a>
-    <a href="https://www.google.com" style={{
-      height: '100%',
-      width: '74%',
-      position: 'absolute',
-      top: 0,
-      right: 0
-    }}> </a>
   </div>
 );
 

@@ -12,7 +12,6 @@ import Feed from '../pages/Feed';
 import Landing from '../pages/Landing';
 import Opportunities from '../pages/Opportunities';
 import Document from '../pages/Document';
-import Landing from '../pages/Landing';
 
 const Opp = () => <Opportunities title="Oportunidades" />;
 const Clients = () => <Opportunities title="Meus Clientes" bided />;
