@@ -21,7 +21,7 @@ const DocumentCard = ({ title, _id, classes, trunc, index, history, img }) => (
       style={{
         marginBottom: 24,
         border: '1px solid rgba(0, 0, 0, 0.2)',
-        width: '70%',
+        width: 625,
         cursor: 'pointer',
       }}
       onClick={() => history.push(`/artigo/${_id}`)}
