@@ -17,7 +17,7 @@ import ChatIcon from '@material-ui/icons/Chat';
 const DocumentCard = ({ title, _id, classes, trunc, index, history, img }) => (
   <Grow in={true}>
     <Paper
-      elevation={0}
+      elevation={2}
       style={{
         marginBottom: 24,
         border: '1px solid rgba(0, 0, 0, 0.2)',
