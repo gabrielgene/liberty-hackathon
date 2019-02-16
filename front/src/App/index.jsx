@@ -10,10 +10,10 @@ import './style.css';
 
 import Feed from '../pages/Feed';
 import Opportunities from '../pages/Opportunities';
+import Contacts from '../pages/Contacts';
+import Document from '../pages/Document';
 
-const Document = () => <h1>Document</h1>;
 const Requests = () => <h1>Requests</h1>;
-const Contacts = () => <h1>Contacts</h1>;
 
 const App = () => (
   <MuiThemeProvider theme={defaultTheme}>

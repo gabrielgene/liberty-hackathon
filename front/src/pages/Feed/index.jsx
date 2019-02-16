@@ -4,32 +4,8 @@ import DocumentService from '../../services/Document';
 import { withStyles } from '@material-ui/core';
 import Root from '../../components/Root';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import PropTypes from 'prop-types';
-import Paper from '@material-ui/core/Paper';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
-import Divider from '@material-ui/core/Divider';
-import TextField from '@material-ui/core/TextField';
 
-import classnames from 'classnames';
-import {
-  Card,
-  CardContent,
-  CardActions,
-  IconButton,
-  Collapse,
-  Button,
-  List,
-} from '@material-ui/core';
-
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ChatIcon from '@material-ui/icons/Chat';
+import DocumentCard from '../../components/DocumentCard';
 
 class Feed extends React.Component {
   state = {
@@ -47,7 +23,9 @@ class Feed extends React.Component {
         }),
       )
       .catch(err =>
-        this.setState({ isLoading: false }, () => this.handleError(err)),
+        this.setState({ isLoading: false, documents: [] }, () =>
+          this.handleError(err),
+        ),
       );
   }
 
@@ -71,40 +49,8 @@ class Feed extends React.Component {
               <CircularProgress color="secondary" />
             </div>
           ) : (
-            [...Array(20)].map(document => (
-              <Paper
-                key={document}
-                elevation={0}
-                style={{
-                  marginBottom: 24,
-                  border: '1px solid rgba(0, 0, 0, 0.2)',
-                  width: '60%',
-                }}
-              >
-                <div className={classes.details}>
-                  <CardContent className={classes.content}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Teste
-                    </Typography>
-                    <Typography component="p" style={{ overflow: 'hidden' }}>
-                      Teste2
-                    </Typography>
-                  </CardContent>
-                  <CardActions className={classes.actions} disableActionSpacing>
-                    <IconButton aria-label="Add to favorites">
-                      <FavoriteIcon />
-                    </IconButton>
-                    <Typography variant="caption">2</Typography>
-                    <IconButton aria-label="Comentários">
-                      <ChatIcon />
-                    </IconButton>
-                    <Typography variant="caption">10</Typography>
-                    <IconButton aria-label="Share">
-                      <ShareIcon />
-                    </IconButton>
-                  </CardActions>
-                </div>
-              </Paper>
+            documents.map((document, i) => (
+              <DocumentCard key={i} index={i} {...document} />
             ))
           )}
         </div>

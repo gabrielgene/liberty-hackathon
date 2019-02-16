@@ -62,7 +62,7 @@ class Feed extends React.Component {
     return (
       <Root>
         <div style={{ width: '70%' }}>
-          <Box title="Oportunidades">
+          <Box title="Contatos">
             {[...Array(20).keys()].map(i => (
               <Opportunities key={i} />
             ))}
