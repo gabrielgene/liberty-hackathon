@@ -58,21 +58,6 @@ class Feed extends React.Component {
     const { isLoading, documents } = this.state;
 
     return (
-<<<<<<< HEAD
-      <div>
-        {isLoading ? (
-          <LinearProgress color="secondary" />
-        ) : (
-          documents.map(document => (
-            <div key={document.id}>
-              <h2>{document.title}</h2>
-              <img
-                style={{ width: 400, height: 300 }}
-                alt="article"
-                src={document.img}
-              />
-              <p>{document.content}</p>
-=======
       <Root>
         <div
           style={{
@@ -84,7 +69,6 @@ class Feed extends React.Component {
           {isLoading ? (
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <CircularProgress color="secondary" />
->>>>>>> 1428c4f609c1cbb29bf22b4fe80386750fdb3809
             </div>
           ) : (
             [...Array(20)].map(document => (
