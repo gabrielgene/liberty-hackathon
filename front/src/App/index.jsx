@@ -1,14 +1,14 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { MuiThemeProvider } from "@material-ui/core/styles";
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import Form from '../pages/Form';
 import Login from '../pages/Login';
 
-import defaultTheme from "./theme";
-import "./style.css";
+import defaultTheme from './theme';
+import './style.css';
 
-import FeedPage from "../pages/Feed";
+import FeedPage from '../pages/Feed';
 
 const Feed = () => (
   <div>

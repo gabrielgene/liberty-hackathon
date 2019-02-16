@@ -14,6 +14,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import TextField from '@material-ui/core/TextField';
+import LeadService from '../../services/Lead';
 
 const styles = theme => ({
   root: {
@@ -75,7 +76,9 @@ const Form = props => {
   const [location, setLocation] = React.useState('');
 
   const handleSubmit = () => {
-    console.log(name, tel, service, cpf, location);
+    LeadService.addLead({ name, tel, service, cpf, location }).then(() =>
+      history.push('/minhas-solicitacoes'),
+    );
   };
 
   return (
