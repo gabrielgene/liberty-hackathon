@@ -9,6 +9,7 @@ import defaultTheme from './theme';
 import './style.css';
 
 import Feed from '../pages/Feed';
+import Landing from '../pages/Landing';
 import Opportunities from '../pages/Opportunities';
 import Document from '../pages/Document';
 
@@ -28,6 +29,7 @@ const App = () => (
         <Route path="/minhas-solicitacoes" component={Requests} />
         <Route path="/oportunidades" component={Opp} />
         <Route path="/contatos" component={Clients} />
+        <Route path="/landing" component={Landing} />
       </div>
     </Router>
   </MuiThemeProvider>
