@@ -4,19 +4,33 @@ import image from '../../assets/landing.png';
 const Landing = () => (
   <div className="landing-wrapper">
     <img style={{ width: '100%' }} src={image} alt=""/>
-    <a href="https://www.youtube.com" style={{
-      height: '100%',
-      width: '26%',
-      position: 'absolute',
-      top: 0,
-      left: 0
+    <a href="/" style={{
+          height: 153,
+          width: 600,
+          position: 'absolute',
+          top: 0,
+          right: 0,
     }}> </a>
-    <a href="https://www.google.com" style={{
-      height: '100%',
-      width: '74%',
+    <a href="/aprenda" style={{
+          height: 153,
+          width: 180,
+          position: 'absolute',
+          top: 0,
+          right: 600,
+    }}> </a>
+    <a href="/solicitar" style={{
+          height: 153,
+          width: 180,
+          position: 'absolute',
+          top: 0,
+          right: 780,
+    }}> </a>
+    <a href="/solicitar" style={{
+      height: 800,
+      width: '36%',
       position: 'absolute',
-      top: 0,
-      right: 0
+      top: 154,
+      left: 0,
     }}> </a>
   </div>
 );
