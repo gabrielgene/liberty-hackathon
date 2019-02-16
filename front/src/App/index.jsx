@@ -13,7 +13,7 @@ import Opportunities from '../pages/Opportunities';
 import Document from '../pages/Document';
 import Landing from '../pages/Landing';
 
-const Opp = () => <Opportunities title="Oportunidades" />;
+const Opp = () => <Opportunities title="Oportunidades" op />;
 const Clients = () => <Opportunities title="Meus Clientes" bided />;
 const Requests = () => <Opportunities title="Minhas Solicitações" />;
 const Main = () => <Feed load="Carregando Feed" />;
