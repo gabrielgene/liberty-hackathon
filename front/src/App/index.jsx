@@ -15,7 +15,7 @@ import Document from '../pages/Document';
 
 const Opp = () => <Opportunities title="Oportunidades" op />;
 const Clients = () => <Opportunities title="Meus Clientes" bided />;
-const Requests = () => <Opportunities title="Minhas Solicitações" />;
+const Requests = () => <Opportunities title="Minhas Solicitações" my />;
 const Main = () => <Feed load="Carregando Feed" />;
 const Learn = () => <Feed load="Carregando material de estudos" learn />;
 

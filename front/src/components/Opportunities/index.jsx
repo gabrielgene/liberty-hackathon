@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
+import { Fade } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -82,123 +83,125 @@ const Opportunities = props => {
   };
 
   return (
-    <Paper elevation={0} className={classes.paper}>
-      <div className={classes.root}>
-        <div
-          style={{
-            flex: 0.8,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <Avatar className={classes.bigAvatar}>R</Avatar>
-        </div>
-        <div
-          style={{
-            flex: 4,
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
+    <Fade in>
+      <Paper elevation={0} className={classes.paper}>
+        <div className={classes.root}>
           <div
             style={{
-              flex: 1,
-              padding: 10,
-              paddingTop: 20,
+              flex: 0.8,
               display: 'flex',
-              alignItems: 'flex-end',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
-            <Typography variant="h6">{service}</Typography>
+            <Avatar className={classes.bigAvatar}>R</Avatar>
           </div>
           <div
             style={{
+              flex: 4,
               display: 'flex',
-              flex: 1,
-              padding: 10,
+              flexDirection: 'column',
             }}
           >
-            <PersonIcon />
-            <Typography
-              style={{ marginLeft: 16, marginRight: 16 }}
-              variant="body2"
-              gutterBottom
-            >
-              {name.length > 20 ? name.substring(0, 20) + '...' : name}
-            </Typography>
-            <PhoneIcon />
-            <Typography
-              style={{ marginLeft: 16, marginRight: 16 }}
-              variant="body2"
-              gutterBottom
-            >
-              {op ? '(**) *********' : tel}
-            </Typography>
-            <LocIcon />
-            <Typography
-              style={{ marginLeft: 16, marginRight: 16 }}
-              variant="body2"
-              gutterBottom
-            >
-              {place}
-            </Typography>
-          </div>
-        </div>
-        <div
-          style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: 10,
-          }}
-        >
-          {userType === TYPE_CLIENTE ? (
-            bided ? (
-              <Button variant="outlined" color="secondary" disabled>
-                Negociando
-              </Button>
-            ) : (
-              <Button variant="outlined" color="primary" disabled>
-                Pendente
-              </Button>
-            )
-          ) : bided ? (
             <div
               style={{
                 flex: 1,
+                padding: 10,
+                paddingTop: 20,
                 display: 'flex',
-                flexDirection: 'column',
+                alignItems: 'flex-end',
               }}
             >
-              <Button variant="outlined" color="secondary" disabled>
-                Negociando
-              </Button>
-              <Button
-                style={{
-                  marginTop: 10,
-                  color: '#f44336',
-                  borderColor: '#f44336',
-                }}
-                variant="outlined"
-                onClick={() => handleCancelContact()}
-              >
-                Cancelar
-              </Button>
+              <Typography variant="h6">{service}</Typography>
             </div>
-          ) : (
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => handleContact()}
+            <div
+              style={{
+                display: 'flex',
+                flex: 1,
+                padding: 10,
+              }}
             >
-              Contactar
-            </Button>
-          )}
+              <PersonIcon />
+              <Typography
+                style={{ marginLeft: 16, marginRight: 16 }}
+                variant="body2"
+                gutterBottom
+              >
+                {name.length > 20 ? name.substring(0, 20) + '...' : name}
+              </Typography>
+              <PhoneIcon />
+              <Typography
+                style={{ marginLeft: 16, marginRight: 16 }}
+                variant="body2"
+                gutterBottom
+              >
+                {op ? '(**) *********' : tel}
+              </Typography>
+              <LocIcon />
+              <Typography
+                style={{ marginLeft: 16, marginRight: 16 }}
+                variant="body2"
+                gutterBottom
+              >
+                {place}
+              </Typography>
+            </div>
+          </div>
+          <div
+            style={{
+              flex: 1,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 10,
+            }}
+          >
+            {userType === TYPE_CLIENTE ? (
+              bided ? (
+                <Button variant="outlined" color="secondary" disabled>
+                  Negociando
+                </Button>
+              ) : (
+                <Button variant="outlined" color="primary" disabled>
+                  Pendente
+                </Button>
+              )
+            ) : bided ? (
+              <div
+                style={{
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+              >
+                <Button variant="outlined" color="secondary" disabled>
+                  Negociando
+                </Button>
+                <Button
+                  style={{
+                    marginTop: 10,
+                    color: '#f44336',
+                    borderColor: '#f44336',
+                  }}
+                  variant="outlined"
+                  onClick={() => handleCancelContact()}
+                >
+                  Cancelar
+                </Button>
+              </div>
+            ) : (
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => handleContact()}
+              >
+                Contactar
+              </Button>
+            )}
+          </div>
         </div>
-      </div>
-    </Paper>
+      </Paper>
+    </Fade>
   );
 };
 
