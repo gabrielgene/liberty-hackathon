@@ -1,12 +1,12 @@
-import React from "react";
-import PropsTypes from "prop-types";
-import DocumentService from "../../services/Document";
-import { withStyles } from "@material-ui/core";
+import React from 'react';
+import PropsTypes from 'prop-types';
+import DocumentService from '../../services/Document';
+import { withStyles } from '@material-ui/core';
 
 class Feed extends React.Component {
   state = {
     isLoading: true,
-    documents: []
+    documents: [],
   };
 
   componentDidMount() {
@@ -15,11 +15,11 @@ class Feed extends React.Component {
       .then(documents =>
         this.setState({
           isLoading: false,
-          documents: documents
-        })
+          documents: documents,
+        }),
       )
       .catch(err =>
-        this.setState({ isLoading: false }, () => this.handleError(err))
+        this.setState({ isLoading: false }, () => this.handleError(err)),
       );
   }
 
@@ -54,7 +54,7 @@ class Feed extends React.Component {
 const styles = theme => ({});
 
 Feed.PropsTypes = {
-  classes: PropsTypes.object.isRequired
+  classes: PropsTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Feed);
