@@ -4,6 +4,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import Form from '../pages/Form';
 import Login from '../pages/Login';
+import Contacts from '../pages/Contacts';
 
 import defaultTheme from './theme';
 import './style.css';
@@ -18,7 +19,6 @@ const Feed = () => (
 const Document = () => <h1>Document</h1>;
 const Requests = () => <h1>Requests</h1>;
 const Opportunities = () => <h1>Opportunities</h1>;
-const Contacts = () => <h1>Contacts</h1>;
 
 const App = () => (
   <MuiThemeProvider theme={defaultTheme}>

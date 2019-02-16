@@ -2,6 +2,7 @@ import React from 'react';
 import PropsTypes from 'prop-types';
 import DocumentService from '../../services/Document';
 import { withStyles } from '@material-ui/core';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 class Feed extends React.Component {
   state = {
@@ -32,7 +33,7 @@ class Feed extends React.Component {
     return (
       <div>
         {isLoading ? (
-          <h1>Carregando</h1>
+          <LinearProgress color="secondary" />
         ) : (
           documents.map(document => (
             <div key={document.id}>
