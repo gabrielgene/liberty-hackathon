@@ -25,5 +25,6 @@ const updateLead = async (lead, id) =>
 export default {
   getLead,
   getLeads,
-  addLead
+  addLead,
+  updateLead
 };

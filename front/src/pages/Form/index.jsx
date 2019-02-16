@@ -1,78 +1,78 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
-import { withStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import Paper from "@material-ui/core/Paper";
-import IconButton from "@material-ui/core/IconButton";
-import BackIcon from "@material-ui/icons/ArrowBack";
-import MenuItem from "@material-ui/core/MenuItem";
-import TextField from "@material-ui/core/TextField";
-import LeadService from "../../services/Lead";
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
+import IconButton from '@material-ui/core/IconButton';
+import BackIcon from '@material-ui/icons/ArrowBack';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+import LeadService from '../../services/Lead';
 
 const styles = theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   card: {
     ...theme.mixins.gutters(),
     padding: 24,
     paddingTop: theme.spacing.unit * 4,
     paddingBottom: theme.spacing.unit * 2,
-    maxWidth: 700
+    maxWidth: 700,
   },
   grow: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   menuButton: {
     marginLeft: -12,
-    marginRight: 20
+    marginRight: 20,
   },
   wrapper: {
-    display: "flex",
-    justifyContent: "center",
-    marginTop: 80
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: 80,
   },
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    marginTop: 24
+    marginTop: 24,
   },
   button: {
     margin: theme.spacing.unit,
-    marginTop: 10
+    marginTop: 10,
   },
   formControl: {
     margin: theme.spacing.unit,
-    minWidth: 120
+    minWidth: 120,
   },
   selectEmpty: {
-    marginTop: theme.spacing.unit * 2
-  }
+    marginTop: theme.spacing.unit * 2,
+  },
 });
 
 const services = [
   {
-    label: "Patrimonial"
+    label: 'Patrimonial',
   },
   {
-    label: "Automovel"
+    label: 'Automovel',
   },
   {
-    label: "Saúde"
-  }
+    label: 'Saúde',
+  },
 ];
 
 const Form = props => {
   const { classes, history } = props;
   const inputLabelRef = React.useRef(null);
-  const [name, setName] = React.useState("");
-  const [tel, setTel] = React.useState("");
-  const [service, setService] = React.useState("");
-  const [cpf, setCPF] = React.useState("");
-  const [location, setLocation] = React.useState("");
+  const [name, setName] = React.useState('');
+  const [tel, setTel] = React.useState('');
+  const [service, setService] = React.useState('');
+  const [cpf, setCPF] = React.useState('');
+  const [location, setLocation] = React.useState('');
 
   const handleSubmit = () => {
     LeadService.addLead({
@@ -81,8 +81,8 @@ const Form = props => {
       service,
       cpf,
       location,
-      bided: false
-    }).then(() => history.push("/minhas-solicitacoes"));
+      bided: false,
+    }).then(() => history.push('/minhas-solicitacoes'));
   };
 
   return (
@@ -107,7 +107,7 @@ const Form = props => {
           <Typography
             variant="h5"
             component="h3"
-            style={{ textAlign: "center", marginBottom: 24 }}
+            style={{ textAlign: 'center', marginBottom: 24 }}
           >
             Enviar solicitação
           </Typography>
@@ -122,12 +122,19 @@ const Form = props => {
             fullWidth
           />
           <TextField
-            id="outlined-name"
+            id="outlined-email"
             label="Telefone"
             className={classes.textField}
             value={tel}
             onChange={e => setTel(e.target.value)}
-            type="number"
+            variant="outlined"
+            fullWidth
+          />
+
+          <TextField
+            id="outlined-tel"
+            label="Email"
+            className={classes.textField}
             variant="outlined"
             fullWidth
           />
@@ -142,8 +149,8 @@ const Form = props => {
             className={classes.textField}
             SelectProps={{
               MenuProps: {
-                className: classes.menu
-              }
+                className: classes.menu,
+              },
             }}
             variant="outlined"
           >
@@ -154,7 +161,7 @@ const Form = props => {
             ))}
           </TextField>
           <TextField
-            id="outlined-name"
+            id="outlined-cpf"
             label="CPF"
             className={classes.textField}
             value={cpf}
@@ -164,7 +171,7 @@ const Form = props => {
           />
 
           <TextField
-            id="outlined-name"
+            id="outlined-loc"
             label="Localização"
             className={classes.textField}
             value={location}

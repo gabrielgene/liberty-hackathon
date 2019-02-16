@@ -17,11 +17,11 @@ import ChatIcon from '@material-ui/icons/Chat';
 const DocumentCard = ({ title, _id, classes, trunc, index, history, img }) => (
   <Grow in={true}>
     <Paper
-      elevation={0}
+      elevation={2}
       style={{
         marginBottom: 24,
         border: '1px solid rgba(0, 0, 0, 0.2)',
-        width: '70%',
+        width: 625,
         cursor: 'pointer',
       }}
       onClick={() => history.push(`/artigo/${_id}`)}

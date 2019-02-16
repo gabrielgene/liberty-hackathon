@@ -1,18 +1,18 @@
-import React from 'react';
-import PropsTypes from 'prop-types';
-import { withStyles } from '@material-ui/core';
-import Root from '../../components/Root';
-import Opportunities from '../../components/Opportunities';
-import Box from '../../components/Box';
+import React from "react";
+import PropsTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
+import Root from "../../components/Root";
+import Opportunities from "../../components/Opportunities";
+import Box from "../../components/Box";
 
-import RequestItem from '../../components/RequestItem';
+import RequestItem from "../../components/RequestItem";
 
-import LeadServices from '../../services/Lead';
+import LeadServices from "../../services/Lead";
 
 class Requests extends React.Component {
   state = {
     isLoading: true,
-    requests: [],
+    requests: []
   };
 
   componentDidMount() {
@@ -21,8 +21,8 @@ class Requests extends React.Component {
       .then(leads =>
         this.setState({
           isLoading: false,
-          requests: leads.filter(el => el.name.substring(0, 1) === 'R'),
-        }),
+          requests: leads.filter(el => el.name.substring(0, 1) === "R")
+        })
       );
   }
 
@@ -32,7 +32,7 @@ class Requests extends React.Component {
 
     return (
       <Root>
-        <div style={{ width: '70%' }}>
+        <div style={{ width: "70%" }}>
           <Box title="Minhas Solicitações">
             {requests.map(item => (
               <RequestItem key={item._id} {...item} />
@@ -47,7 +47,7 @@ class Requests extends React.Component {
 const styles = theme => ({});
 
 Request.PropsTypes = {
-  classes: PropsTypes.object.isRequired,
+  classes: PropsTypes.object.isRequired
 };
 
 export default withStyles(styles)(Requests);
