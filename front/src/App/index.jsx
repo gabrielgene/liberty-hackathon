@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import Form from '../pages/Form';
+import Login from '../pages/Login';
 
 import defaultTheme from './theme';
 import './style.css';
 
-const Login = () => <h1>Login</h1>;
 const Feed = () => <h1>Feed</h1>;
 const Document = () => <h1>Document</h1>;
 const Requests = () => <h1>Requests</h1>;
