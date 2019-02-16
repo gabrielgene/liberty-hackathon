@@ -1,7 +1,7 @@
 import React from "react";
 import PropsTypes from "prop-types";
 import DocumentService from "../../services/Document";
-import { withStyles } from "@material-ui/core";
+import { withStyles, Typography, Fade } from "@material-ui/core";
 import Root from "../../components/Root";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
@@ -45,9 +45,20 @@ class Feed extends React.Component {
           }}
         >
           {isLoading ? (
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <CircularProgress color="secondary" />
-            </div>
+            <Fade in={isLoading}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  height: "70vh",
+                  justifyContent: "center"
+                }}
+              >
+                <Typography variant="display1">Carregando o feed</Typography>
+                <CircularProgress color="primary" style={{ marginTop: 10 }} />
+              </div>
+            </Fade>
           ) : (
             documents.map((document, i) => (
               <DocumentCard key={i} index={i} {...document} />
