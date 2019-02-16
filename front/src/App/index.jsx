@@ -1,14 +1,20 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { MuiThemeProvider } from '@material-ui/core/styles';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 
-import Form from '../pages/Form';
+import Form from "../pages/Form";
 
-import defaultTheme from './theme';
-import './style.css';
+import defaultTheme from "./theme";
+import "./style.css";
+
+import FeedPage from "../pages/Feed";
 
 const Login = () => <h1>Login</h1>;
-const Feed = () => <h1>Feed</h1>;
+const Feed = () => (
+  <div>
+    <FeedPage />
+  </div>
+);
 const Document = () => <h1>Document</h1>;
 const Requests = () => <h1>Requests</h1>;
 const Opportunities = () => <h1>Opportunities</h1>;
