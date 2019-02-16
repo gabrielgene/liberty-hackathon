@@ -10,9 +10,8 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import logo from '../../assets/logo.png';
 import bg from '../../assets/bg.jpg';
 
-
 const styles = theme => ({
-  holder:{
+  holder: {
     backgroundImage: `url(${bg})`,
     height: '100vh',
     paddingTop: '20vh',
@@ -29,14 +28,15 @@ const styles = theme => ({
       marginRight: 'auto',
     },
   },
-  imgLogin:{
-    width: 150
+  imgLogin: {
+    width: 150,
   },
   paper: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
+    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme
+      .spacing.unit * 3}px`,
   },
   avatar: {
     margin: theme.spacing.unit,
@@ -52,22 +52,20 @@ const styles = theme => ({
 });
 
 class SignIn extends React.Component {
-  state={
+  state = {
     email: '',
-    password: ''
-  }
+    password: '',
+  };
 
-  handleChange = e => this.setState({ [e.target.name]: e.target.value})
+  handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
   onClick = () => {
     const { email, password } = this.state;
-    if(email === 'corretor' && password === '123'){
+    if (email === 'corretor' && password === '123') {
       this.props.history.push('/inicio', { type: email });
-    }
-    else if(email === 'cliente' && password === '123'){
-      this.props.history.push('/minhas-solicitacoes', { type: email });
-    }
-    else alert("Usuário não encontrado");
+    } else if (email === 'cliente' && password === '123') {
+      this.props.history.push('/inicio', { type: email });
+    } else alert('Usuário não encontrado');
   };
 
   render() {
@@ -76,34 +74,40 @@ class SignIn extends React.Component {
       <main className={classes.holder}>
         <div className={classes.main}>
           <CssBaseline />
-            <Paper className={classes.paper}>
-              <img className={classes.imgLogin} src={logo} alt="" />
-              <Typography component="h1" variant="h5">
-                StartSeg
-              </Typography>
-              <form className={classes.form}>
-                <FormControl margin="normal" required fullWidth>
-                  <InputLabel htmlFor="email">Username</InputLabel>
-                  <Input id="email" name="email" onChange={this.handleChange} />
-                </FormControl>
-                <FormControl margin="normal" required fullWidth>
-                  <InputLabel htmlFor="password">Senha</InputLabel>
-                  <Input name="password" type="password" id="password" autoComplete="current-password" onChange={this.handleChange}  />
-                </FormControl>
-                <Button
-                  fullWidth
-                  variant="contained"
-                  color="primary"
-                  className={classes.submit}
-                  onClick={this.onClick}
-                >
-                  Entrar
-                </Button>
-              </form>
+          <Paper className={classes.paper}>
+            <img className={classes.imgLogin} src={logo} alt="" />
+            <Typography component="h1" variant="h5">
+              StartSeg
+            </Typography>
+            <form className={classes.form}>
+              <FormControl margin="normal" required fullWidth>
+                <InputLabel htmlFor="email">Username</InputLabel>
+                <Input id="email" name="email" onChange={this.handleChange} />
+              </FormControl>
+              <FormControl margin="normal" required fullWidth>
+                <InputLabel htmlFor="password">Senha</InputLabel>
+                <Input
+                  name="password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                  onChange={this.handleChange}
+                />
+              </FormControl>
+              <Button
+                fullWidth
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+                onClick={this.onClick}
+              >
+                Entrar
+              </Button>
+            </form>
           </Paper>
         </div>
       </main>
-    )
+    );
   }
 }
 
