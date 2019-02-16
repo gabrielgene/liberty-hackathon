@@ -75,6 +75,7 @@ const Form = props => {
   const [location, setLocation] = React.useState('');
 
   const handleSubmit = () => {
+    history.push('/minhas-solicitacoes');
     console.log(name, tel, service, cpf, location);
   };
 

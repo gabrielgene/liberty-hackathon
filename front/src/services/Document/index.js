@@ -1,4 +1,4 @@
-import { API_DEV_URL } from "../../util";
+import { API_DEV_URL } from '../../util';
 
 const getDocuments = async () => {
   return fetch(`${API_DEV_URL}documents`);
@@ -9,5 +9,5 @@ const getDocument = async id => {
 
 export default {
   getDocument,
-  getDocuments
+  getDocuments,
 };
