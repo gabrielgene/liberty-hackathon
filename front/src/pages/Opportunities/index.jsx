@@ -1,6 +1,6 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
-import DocumentService from '../../services/Document';
+import LeadService from '../../services/Lead';
 import { withStyles } from '@material-ui/core';
 import Root from '../../components/Root';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -36,18 +36,19 @@ import ChatIcon from '@material-ui/icons/Chat';
 class Feed extends React.Component {
   state = {
     isLoading: true,
-    documents: [],
+    leads: [],
   };
 
   componentDidMount() {
-    DocumentService.getDocuments()
+    LeadService.getLeads()
       .then(data => data.json())
-      .then(documents =>
+      .then(leads => {
+        console.log(leads);
         this.setState({
           isLoading: false,
-          documents: documents,
-        }),
-      )
+          leads: leads,
+        });
+      })
       .catch(err =>
         this.setState({ isLoading: false }, () => this.handleError(err)),
       );
@@ -56,17 +57,20 @@ class Feed extends React.Component {
   handleError = err => {};
 
   render() {
-    const { classes } = this.props;
-    const { isLoading, documents } = this.state;
+    const { classes, title } = this.props;
+    const { isLoading, leads } = this.state;
 
     return (
       <Root>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <Box width={800} title="Oportunidades">
+          <Box width={800} title={title}>
+            {console.log(leads)}
             <div>
-              {[...Array(20).keys()].map(i => (
-                <Opportunities key={i} />
-              ))}
+              {leads
+                .filter(l => !l.bided)
+                .map(l => (
+                  <Opportunities key={l._id} {...l} />
+                ))}
             </div>
           </Box>
         </div>

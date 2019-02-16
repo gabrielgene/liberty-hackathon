@@ -31,7 +31,7 @@ const styles = theme => ({
   },
 });
 
-const Opportunities = ({ classes }) => (
+const Opportunities = ({ classes, name, tel, service, cpf, location }) => (
   <Paper elevation={0} className={classes.paper}>
     <ListItem alignItems="flex-start">
       <div
@@ -48,7 +48,7 @@ const Opportunities = ({ classes }) => (
         </div>
         <div style={{ marginTop: 16, marginLeft: 28 }}>
           <Typography variant="h6" gutterBottom>
-            Nome do Serviço
+            {service}
           </Typography>
           <div
             style={{
@@ -63,7 +63,7 @@ const Opportunities = ({ classes }) => (
               variant="body2"
               gutterBottom
             >
-              João das neves
+              {name.length > 20 ? name.substring(0, 20) + '...' : name}
             </Typography>
             <PhoneIcon />
             <Typography
@@ -71,7 +71,7 @@ const Opportunities = ({ classes }) => (
               variant="body2"
               gutterBottom
             >
-              (71) 99222-9059
+              {tel}
             </Typography>
             <LocIcon />
             <Typography
@@ -79,7 +79,7 @@ const Opportunities = ({ classes }) => (
               variant="body2"
               gutterBottom
             >
-              Expo norte center
+              {location}
             </Typography>
           </div>
         </div>
