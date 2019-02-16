@@ -158,11 +158,27 @@ const Opportunities = props => {
           >
             {userType === TYPE_CLIENTE ? (
               bided ? (
-                <Button variant="outlined" color="secondary" disabled>
+                <Button
+                  style={{
+                    color: '#ffbf00',
+                    borderColor: '#ffbf00',
+                  }}
+                  variant="outlined"
+                  color="secondary"
+                  disabled
+                >
                   Negociando
                 </Button>
               ) : (
-                <Button variant="outlined" color="primary" disabled>
+                <Button
+                  style={{
+                    color: '#ffbf00',
+                    borderColor: '#ffbf00',
+                  }}
+                  variant="outlined"
+                  color="secondary"
+                  disabled
+                >
                   Pendente
                 </Button>
               )

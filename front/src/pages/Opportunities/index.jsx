@@ -87,29 +87,31 @@ class Feed extends React.Component {
           ) : (
             <Box width={800} title={title}>
               <div>
-                {my ? (
-                  <Opportunities
-                    onCompleted={this.onCompleted}
-                    op={op}
-                    my={my}
-                    key={leads[0]._id}
-                    {...leads[0]}
-                    place={leads[0].location}
-                  />
-                ) : (
-                  leads
-                    .filter(l => l.bided === !!bided)
-                    .map(l => (
-                      <Opportunities
-                        onCompleted={this.onCompleted}
-                        op={op}
-                        my={my}
-                        key={l._id}
-                        {...l}
-                        place={l.location}
-                      />
-                    ))
-                )}
+                {my
+                  ? leads
+                      .filter(l => l.name.substring(0, 1) === 'R')
+                      .map(l => (
+                        <Opportunities
+                          onCompleted={this.onCompleted}
+                          op={op}
+                          my={my}
+                          key={l._id}
+                          {...l}
+                          place={l.location}
+                        />
+                      ))
+                  : leads
+                      .filter(l => l.bided === !!bided)
+                      .map(l => (
+                        <Opportunities
+                          onCompleted={this.onCompleted}
+                          op={op}
+                          my={my}
+                          key={l._id}
+                          {...l}
+                          place={l.location}
+                        />
+                      ))}
               </div>
             </Box>
           )}
