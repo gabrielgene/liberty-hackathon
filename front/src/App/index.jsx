@@ -8,16 +8,11 @@ import Login from '../pages/Login';
 import defaultTheme from './theme';
 import './style.css';
 
-import FeedPage from '../pages/Feed';
+import Feed from '../pages/Feed';
+import Opportunities from '../pages/Opportunities';
 
-const Feed = () => (
-  <div>
-    <FeedPage />
-  </div>
-);
 const Document = () => <h1>Document</h1>;
 const Requests = () => <h1>Requests</h1>;
-const Opportunities = () => <h1>Opportunities</h1>;
 const Contacts = () => <h1>Contacts</h1>;
 
 const App = () => (

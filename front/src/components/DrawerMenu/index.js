@@ -4,6 +4,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import PersonIcon from '@material-ui/icons/Person';
 import HomeIcon from '@material-ui/icons/Home';
 import ExitIcon from '@material-ui/icons/ExitToApp';
 import DashboardIcon from '@material-ui/icons/Dashboard';
@@ -105,8 +106,13 @@ class DrawerMenu extends React.Component {
         </div>
 
         <List>
-          <ListItemMenu to="/" icon={<HomeIcon />} text="Inicio" />
-          <ListItemMenu to="/crm" icon={<DashboardIcon />} text="Clientes" />
+          <ListItemMenu to="/inicio" icon={<HomeIcon />} text="Inicio" />
+          <ListItemMenu
+            to="/oportunidades"
+            icon={<DashboardIcon />}
+            text="Oportunidades"
+          />
+          <ListItemMenu to="/contatos" icon={<PersonIcon />} text="Clientes" />
         </List>
         <Divider />
         <List>

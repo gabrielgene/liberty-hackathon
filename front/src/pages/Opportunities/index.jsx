@@ -14,6 +14,8 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
 import TextField from '@material-ui/core/TextField';
+import Opportunities from '../../components/Opportunities';
+import Box from '../../components/Box';
 
 import classnames from 'classnames';
 import {
@@ -59,54 +61,12 @@ class Feed extends React.Component {
 
     return (
       <Root>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          {isLoading ? (
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <CircularProgress color="secondary" />
-            </div>
-          ) : (
-            [...Array(20)].map(document => (
-              <Paper
-                key={document}
-                elevation={0}
-                style={{
-                  marginBottom: 24,
-                  border: '1px solid rgba(0, 0, 0, 0.2)',
-                  width: '60%',
-                }}
-              >
-                <div className={classes.details}>
-                  <CardContent className={classes.content}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Teste
-                    </Typography>
-                    <Typography component="p" style={{ overflow: 'hidden' }}>
-                      Teste2
-                    </Typography>
-                  </CardContent>
-                  <CardActions className={classes.actions} disableActionSpacing>
-                    <IconButton aria-label="Add to favorites">
-                      <FavoriteIcon />
-                    </IconButton>
-                    <Typography variant="caption">2</Typography>
-                    <IconButton aria-label="Comentários">
-                      <ChatIcon />
-                    </IconButton>
-                    <Typography variant="caption">10</Typography>
-                    <IconButton aria-label="Share">
-                      <ShareIcon />
-                    </IconButton>
-                  </CardActions>
-                </div>
-              </Paper>
-            ))
-          )}
+        <div style={{ width: '70%' }}>
+          <Box title="Contatos">
+            {[...Array(20).keys()].map(i => (
+              <Opportunities key={i} />
+            ))}
+          </Box>
         </div>
       </Root>
     );
